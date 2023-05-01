@@ -40,4 +40,18 @@ app.get('/', function (req, res) {
   res.json(dados)
 })
 
+
+app.get("/produtos", (req, res) => {
+
+    const id = req.params.id;
+    const produto = dados.find(item => item.id == id);
+    
+    if (produto) {
+      res.json(produto);
+    } else {
+      res.status(404).send("Produto não encontrado.");
+    }
+  });
+  
+
 app.listen(process.env.PORT || 3000)
