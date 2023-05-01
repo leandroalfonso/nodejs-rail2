@@ -41,7 +41,7 @@ app.get('/', function (req, res) {
 })
 
 
-app.get("/produtos", (req, res) => {
+app.get("/produtos/:id", (req, res) => {
 
     const id = req.params.id;
     const produto = dados.find(item => item.id == id);
